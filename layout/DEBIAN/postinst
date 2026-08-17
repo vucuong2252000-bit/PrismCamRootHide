@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -u
+
+SHARED_DIR="/var/mobile/Library/PrismCam"
+PLIST="/Library/LaunchDaemons/com.local.prismcam.streamd.plist"
+
+mkdir -p "$SHARED_DIR"
+chown mobile:mobile "$SHARED_DIR" 2>/dev/null || true
+chmod 750 "$SHARED_DIR" 2>/dev/null || true
+
+launchctl unload "$PLIST" 2>/dev/null || true
+launchctl load "$PLIST" 2>/dev/null || true
+uicache -p /Applications/PrismCam.app 2>/dev/null || true
+
+exit 0
+

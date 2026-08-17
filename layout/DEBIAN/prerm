@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PLIST="/Library/LaunchDaemons/com.local.prismcam.streamd.plist"
+
+if [ "${1:-}" = "remove" ] || [ "${1:-}" = "upgrade" ]; then
+    launchctl unload "$PLIST" 2>/dev/null || true
+fi
+
+exit 0
+
