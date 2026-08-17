@@ -1,0 +1,10 @@
+Package: com.local.prismcam
+Name: PrismCam
+Version: 0.1.0
+Architecture: iphoneos-arm64e
+Description: Local-only virtual camera controller for RootHide Dopamine.
+Maintainer: Local Build
+Author: Local Build
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate
+
