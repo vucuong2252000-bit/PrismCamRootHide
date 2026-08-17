@@ -9,6 +9,6 @@ SUBPROJECTS += app daemon camera overlay
 
 include $(THEOS_MAKE_PATH)/aggregate.mk
 
-before-package::
-	chmod 0755 $(THEOS_PROJECT_DIR)/layout/DEBIAN/postinst
-	chmod 0755 $(THEOS_PROJECT_DIR)/layout/DEBIAN/prerm
+before-package:
+	chmod 0755 $(THEOS_STAGING_DIR)/DEBIAN/postinst
+	chmod 0755 $(THEOS_STAGING_DIR)/DEBIAN/prerm
