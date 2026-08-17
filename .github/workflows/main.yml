@@ -21,7 +21,8 @@ jobs:
         run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"
 
       - name: Validate project
-       run: /usr/bin/python3 scripts/validate_project.py
+        run: /usr/bin/python3 scripts/validate_project.py
+        
       - name: Build release package
         run: >-
           make clean package FINALPACKAGE=1
