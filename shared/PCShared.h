@@ -2,6 +2,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 FOUNDATION_EXPORT NSString *const PCConfigChangedNotification;
 FOUNDATION_EXPORT NSString *const PCDefaultSourceMode;
 
@@ -17,5 +21,8 @@ NSMutableDictionary *PCLoadConfiguration(void);
 BOOL PCSaveConfiguration(NSDictionary *configuration, NSError **error);
 void PCPostConfigChanged(void);
 
-NS_ASSUME_NONNULL_END
+#ifdef __cplusplus
+}
+#endif
 
+NS_ASSUME_NONNULL_END
